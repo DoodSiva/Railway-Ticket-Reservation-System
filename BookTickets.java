@@ -20,4 +20,36 @@ public class BookTickets
     
     static Map <Integer, Passenger> passenger = new HashMap<>();
 
+    
+    public void bookTicket(Passenger p)
+    {
+        bookedTickets.add(p.passengerId);
+        passenger.put(p.passengerId, p);
+
+        System.out.println("Booked Successfully");
+    }
+
+    public void addToRac(Passenger p)
+    {
+        p.alloted = "RAC";
+        p.allotedSeat = racPositions.get(0);
+        availableRac--;
+        racPositions.remove(0);
+
+        passenger.put(p.passengerId, p);
+
+        System.out.println("\nAdded to RAC Successfully");
+    }
+
+    public void addToWaitingList(Passenger p)
+    {
+        p.alloted = "WL";
+        p.allotedSeat = waitingListPositions.get(0);
+        availableWaitingList--;
+        waitingListPositions.remove(0);
+
+        passenger.put(p.passengerId, p);
+
+        System.out.println("\nAdded to Waiting List Successfully");
+    }
 }
