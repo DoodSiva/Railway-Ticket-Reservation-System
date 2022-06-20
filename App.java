@@ -159,7 +159,7 @@ public class App
                     loop = false;
                     break;
                 default:
-                    System.out.println("Invalid Choice\nExiting Application...");
+                    System.out.println("\nInvalid Choice\nExiting Application...");
                     loop=false;
             }
         }
