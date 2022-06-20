@@ -144,6 +144,10 @@ public class App
                 }
                     break;
                 case 3:
+                    {
+                        BookTickets booker = new BookTickets();
+                        booker.printBooked();
+                    }
                     break;
                 case 4:
                     break;

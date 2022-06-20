@@ -106,4 +106,15 @@ public class BookTickets
             App.bookTicket(passengerFromRac);
         }
     }
+
+    public void printBooked()
+    {
+        for (Passenger p : passengers.values())
+        {
+            System.out.println("\nPassenger ID: " + p.passengerId);
+            System.out.println("Name: " + p.name);
+            System.out.println("Age: " + p.age);
+            System.out.println("Status: " + p.number + p.alloted);
+        }
+    }
 }
