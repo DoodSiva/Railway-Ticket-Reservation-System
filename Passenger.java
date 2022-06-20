@@ -7,8 +7,8 @@ public class Passenger
     int age;
     String preferredBerth;
 
-    String allotedBerth;
-    int allotedSeat;
+    String alloted;
+    int number; // seat number
     
     public Passenger (String name, int age, String preferredBerth)
     {

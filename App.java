@@ -21,7 +21,7 @@ public class App
             if (p.preferredBerth.equals("L"))
             {
                 p.alloted = "L";
-                p.allotedSeat = BookTickets.lowerBerthPositions.get(0);
+                p.number = BookTickets.lowerBerthPositions.get(0);
                 booker.bookTicket(p);
                 BookTickets.availableLowerBerths--;
                 BookTickets.lowerBerthPositions.remove(0);
@@ -30,7 +30,7 @@ public class App
             if (p.preferredBerth.equals("M"))
             {
                 p.alloted = "M";
-                p.allotedSeat = BookTickets.middleBerthPositions.get(0);
+                p.number = BookTickets.middleBerthPositions.get(0);
                 booker.bookTicket(p);
                 BookTickets.availableMiddleBerths--;
                 BookTickets.middleBerthPositions.remove(0);
@@ -39,7 +39,7 @@ public class App
             if (p.preferredBerth.equals("U"))
             {
                 p.alloted = "U";
-                p.allotedSeat = BookTickets.upperBerthPositions.get(0);
+                p.number = BookTickets.upperBerthPositions.get(0);
                 booker.bookTicket(p);
                 BookTickets.availableUpperBerths--;
                 BookTickets.upperBerthPositions.remove(0);
@@ -51,7 +51,7 @@ public class App
             System.out.println("\nMiddle Berth Given");
 
             p.alloted = "M";
-            p.allotedSeat = BookTickets.middleBerthPositions.get(0);
+            p.number = BookTickets.middleBerthPositions.get(0);
             booker.bookTicket(p);
             BookTickets.availableMiddleBerths--;
             BookTickets.middleBerthPositions.remove(0);  
@@ -62,7 +62,7 @@ public class App
             System.out.println("\nLower Berth Given");
 
             p.alloted = "L";
-            p.allotedSeat = BookTickets.lowerBerthPositions.get(0);
+            p.number = BookTickets.lowerBerthPositions.get(0);
             booker.bookTicket(p);
             BookTickets.availableLowerBerths--;
             BookTickets.lowerBerthPositions.remove(0);   
@@ -73,7 +73,7 @@ public class App
             System.out.println("\nUpper Berth Given");
 
             p.alloted = "U";
-            p.allotedSeat = BookTickets.upperBerthPositions.get(0);
+            p.number = BookTickets.upperBerthPositions.get(0);
             booker.bookTicket(p);
             BookTickets.availableUpperBerths--;
             BookTickets.upperBerthPositions.remove(0);
@@ -89,6 +89,23 @@ public class App
             booker.addToWaitingList(p);
         }        
     }
+
+    
+    public static void cancelTicket(int id)
+    {
+        BookTickets booker = new BookTickets();
+        
+        if(!BookTickets.passengers.containsKey(id))
+        {
+            System.out.println("Passenger detail unknown");
+        }
+
+        else
+        {
+            booker.cancelTicket(id);
+        }
+    }
+    
     
     public static void main (String[] args)
     {
@@ -120,6 +137,11 @@ public class App
                 }
                     break;
                 case 2:
+                {
+                    System.out.print("\nEnter Passenger ID: ");
+                    int id = input.nextInt();
+                    cancelTicket(id);
+                }
                     break;
                 case 3:
                     break;
