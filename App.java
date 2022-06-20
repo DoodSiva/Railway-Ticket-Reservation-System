@@ -144,12 +144,16 @@ public class App
                 }
                     break;
                 case 3:
-                    {
-                        BookTickets booker = new BookTickets();
-                        booker.printBooked();
-                    }
+                {
+                    BookTickets booker = new BookTickets();
+                    booker.printBooked();
+                }
                     break;
                 case 4:
+                {
+                    BookTickets booker = new BookTickets();
+                    booker.printAvailable();
+                }
                     break;
                 case 5:
                     loop = false;

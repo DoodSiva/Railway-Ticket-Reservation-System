@@ -109,6 +109,12 @@ public class BookTickets
 
     public void printBooked()
     {
+        if (passengers.size() == 0)
+        {
+            System.out.println("\nNo Tickets Booked");
+            return;
+        }
+
         for (Passenger p : passengers.values())
         {
             System.out.println("\nPassenger ID: " + p.passengerId);
@@ -116,5 +122,15 @@ public class BookTickets
             System.out.println("Age: " + p.age);
             System.out.println("Status: " + p.number + p.alloted);
         }
+    }
+
+    public void printAvailable()
+    {
+        System.out.println("\nAvailable Lower Berths: " + availableLowerBerths);
+        System.out.println("\nAvailable Middle Berths: " + availableMiddleBerths);
+        System.out.println("\nAvailable Upper Berths: " + availableUpperBerths);
+
+        System.out.println("\nAvailable RAC Tickets: " + availableRac);
+        System.out.println("\nAvailable Waiting List: " + availableWaitingList);
     }
 }
